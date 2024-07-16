@@ -139,7 +139,7 @@ end
 
 local function WarningIcon()
 	if conflictsfound then
-		surface.SetFont("BeatrunHUD")
+		surface.SetFont("DebugFixed")
 		surface.SetTextPos(2, 0)
 		surface.SetTextColor(220, 20, 20, math.abs(math.sin(CurTime() * 2) * 255))
 		surface.DrawText("#beatrun.addonwarning.conflictfound")
