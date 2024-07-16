@@ -183,34 +183,6 @@ function PLAYER:Spawn()
 
 	local CPSave = false
 
-	if Course_Name ~= "" and Course_StartPos ~= vector_origin then
-		if ply:GetInfoNum("Beatrun_CPSave", 0) >= 1 and ply:GetNW2Float("CPNum", 1) > 1 and ply.CPSavePos and ply.LastSpawnTime + 0.6 < CurTime() then
-			ply:SetPos(ply.CPSavePos)
-			ply:SetEyeAngles(ply.CPSaveAng)
-			ply:SetLocalVelocity(ply.CPSaveVel)
-			ply:LoadParkourState()
-
-			CPSave = true
-		else
-			ply.CPSavePos = nil
-			ply.CPsaveAng = nil
-			ply.CPsaveVel = nil
-
-			ply:SetPos(Course_StartPos)
-			ply:SetEyeAngles(Angle(0, Course_StartAng, 0))
-			ply:SetLocalVelocity(vector_origin)
-
-			//Failsafe
-			timer.Simple(0.1, function()
-				ply:SetLocalVelocity(vector_origin)
-				ply:SetPos(Course_StartPos)
-			end)
-
-			// ReplayStop(ply)
-			// ReplayStart(ply)
-		end
-	end
-
 	if not ply.InReplay and not CPSave then
 		ply:SetNW2Float("CPNum", 1)
 	end
