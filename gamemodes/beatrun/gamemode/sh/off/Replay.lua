@@ -182,7 +182,7 @@ if CLIENT then
 
 	local function BeatrunReplayHUD()
 		if LocalPlayer().ReplayTicks and not LocalPlayer().ReplayTicks.reliable then
-			surface.SetFont("BeatrunHUD")
+			surface.SetFont("DebugFixed")
 			surface.SetTextColor(rcol)
 			surface.SetTextPos(5, ScrH() * 0.975)
 
