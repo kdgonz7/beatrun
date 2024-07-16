@@ -1,0 +1,8 @@
+"sandbox-beatrun"
+{
+	"base"		"base"
+	"title"		"Sandboxified Beatrun"
+	"maps"		""
+	"category"	"sandbox"
+	"menusystem"	"1"
+}
