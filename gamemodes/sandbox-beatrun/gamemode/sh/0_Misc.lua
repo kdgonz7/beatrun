@@ -54,7 +54,6 @@ hook.Add("SetupMove", "JumpDetect", function(ply, mv, cmd)
 
 	if ply:UsingRH() then
 		ply:SetWasOnGround(ply:OnGround())
-
 		return
 	end
 
