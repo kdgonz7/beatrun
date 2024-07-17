@@ -127,7 +127,6 @@ function RemoveBodyAnim(noang)
   if (not IsValid(currentwep)
   or  not currentwep:IsScripted()) then return end
 
-  if ply:notUsingRH() then
     if currentwep.PlayViewModelAnimation then
       currentwep:PlayViewModelAnimation("Draw")
     else
@@ -140,11 +139,11 @@ function RemoveBodyAnim(noang)
         end
       end)
     end
-  end
 end
 
 cachebody = {}
 matrixfrom = {}
+
 local transitionlerp = 0
 local transition = false
 local matrixto = {}
@@ -200,10 +199,11 @@ armbones = {
 
 function CacheBodyAnim()
   if not IsValid(BodyAnim) then return end
-  local pos = LocalPlayer():GetPos()
+	local LP = LocalPlayer()
+  local pos = LP:GetPos()
 
   BodyAnim:SetupBones()
-  matrixfrompos:Set(LocalPlayer():GetPos())
+  matrixfrompos:Set(LP:GetPos())
   
   for i = 0, BodyAnim:GetBoneCount() - 1 do
     local m = BodyAnim:GetBoneMatrix(i)
@@ -217,7 +217,9 @@ function CacheBodyAnim()
 end
 
 function CacheLerpBodyAnim()
-  if not LocalPlayer():Alive() then
+	local LP = LocalPlayer()
+
+  if not LP:Alive() then
     transition = false
     return
   end
@@ -225,7 +227,7 @@ function CacheLerpBodyAnim()
   if transition and transitionlerp < 1 then
     BodyAnim:SetupBones()
     BodyAnimMDL:SetNoDraw(true)
-    local pos = LocalPlayer():GetPos()
+    local pos = LP:GetPos()
     // local posdelta = pos - matrixfrompos
     local this = BodyAnim
     this.m = this.m or Matrix()
