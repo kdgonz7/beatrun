@@ -85,7 +85,7 @@ local function ClimbingThink(ply, mv, cmd)
   -- * 5 = folded start
   -- * 6 = folded heave up
   if ply:GetClimbing() == 5 then
-    if mv:KeyPressed(IN_FORWARD) and ply:GetClimbingDelay() < CurTime() + 0.65 or mv:KeyDown(IN_FORWARD) and ply:GetClimbingDelay() < CurTime() then
+    if (mv:KeyPressed(IN_FORWARD) and ply:GetClimbingDelay() < CurTime() + 0.65) or (mv:KeyDown(IN_FORWARD) and ply:GetClimbingDelay() < CurTime()) then
       ParkourEvent("hangfoldedheaveup", ply)
       ply:SetClimbing(6)
       ply:SetClimbingTime(0)
@@ -181,45 +181,24 @@ local function ClimbingThink(ply, mv, cmd)
       local tr = ply.ClimbingTraceSafety
       local trout = ply.ClimbingTraceSafetyOut
       local mins, maxs = ply:GetHull()
+			
       mins.z = maxs.z * 0.25
-      tr.start = ply:GetClimbingEnd()
+
+			tr.start = ply:GetClimbingEnd()
       tr.endpos = tr.start
       tr.maxs = maxs
       tr.mins = mins
       tr.filter = ply
       tr.output = trout
+
       util.TraceHull(tr)
-      --[[ TODO: Make this work
-			for i = -64, 64, 1 do
-				tr.endpos = tr.start + ply:GetClimbingAngle():Forward() * i
 
-				util.TraceHull(tr)
-
-				print(trout.Hit)
-				print(tr.endpos)
-
-				if not trout.Hit then
-					// tr.start = tr.endpos
-					// tr.endpos = tr.start - ply:GetClimbingAngle():Forward() * i
-
-					// util.TraceHull(tr)
-
-					// if not trout.Hit then
-						ply:SetClimbingEnd(tr.endpos)
-						ply:SetClimbing(2)
-						ParkourEvent("climbheave", ply)
-					// end
-				end
-			end
-			//]]
       if not trout.Hit then
         tr.start = ply:GetClimbingEnd()
         tr.endpos = tr.start - ply:GetClimbingAngle():Forward() * 20
         util.TraceHull(tr)
-        if not trout.Hit then
-          ply:SetClimbing(2)
-          ParkourEvent("climbheave", ply)
-        end
+        ply:SetClimbing(2)
+        ParkourEvent("climbheave", ply)
       end
     end
 
@@ -229,14 +208,16 @@ local function ClimbingThink(ply, mv, cmd)
       local isright = mv:KeyDown(IN_MOVERIGHT)
       local mult = isright and 30 or -30
       dir:Mul(mult)
-      local tr = ply.ClimbingTraceEnd
+      
+			local tr = ply.ClimbingTraceEnd
       local trout = ply.ClimbingTraceEndOut
-      -- local oldstart = tr.start
-      -- local oldend = tr.endpos
+
       local start = mv:GetOrigin() + wallang:Forward() * 20 + Vector(0, 0, 100) + dir
-      tr.start = start
+      
+			tr.start = start
       tr.endpos = start - Vector(0, 0, 80)
-      util.TraceLine(tr)
+      
+			util.TraceLine(tr)
       if trout.Entity and trout.Entity.IsNPC and (trout.Entity:IsNPC() or trout.Entity:IsPlayer()) then return false end
       local fail = trout.Fraction < 0.25 or trout.Fraction > 0.5
       if not fail then
