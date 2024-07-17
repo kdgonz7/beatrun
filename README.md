@@ -31,6 +31,7 @@ This version of beatrun, albeit much smaller, also yields better FPS in certain 
 * Weapons are now switched when wallrunning, rolling, and hitting the ground.
 * When jumping, the animation no longer plays the weird leg skipping animation (**This is a preference, and will be changed in a later update rollout**)
 * Fixed (Issue #202) with runnerhands not being able to switch. (Simple SWEP:Deploy fix)
+* Fixed a bug with ziplines not returning `viewtilt` back to normal.
 
 ## WHY?
 
