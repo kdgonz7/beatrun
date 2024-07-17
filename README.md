@@ -36,3 +36,15 @@ This version of beatrun, albeit much smaller, also yields better FPS in certain 
 Because this mod serves more as a realism enhancement for the sandbox gamemode, rather than a beatrun replacement, as the views and motives do not align well. The Sandboxified Beatrun gamemode is based off of the true Sandbox gamemode, and removes a majority of the "competitive" style checks that don't make sense. This improves performance, as there is less modules, and less state changes throughout the entirety of the addon. 
 
 This addon is much more of an enhancement, removing a majority of the bloat which is unneeded, if your main goal for this addon is movement, and there's a checkpoint system, and a bunch of keybinds which are unneeded and clunk up your gameplay & addon compatibility.
+
+There is also the ability to implement your own systems using this addon, which makes life much easier, when there aren't any core mechanics getting in your way.
+
+## Pairing Addons
+
+The addons which are resolved in conflicts TOTALLY are as follows:
+
+* Realistic Fragmentation System
+
+The addons which are resolved (with limitations) are as follows:
+
+* BSMod Punch SWEP
