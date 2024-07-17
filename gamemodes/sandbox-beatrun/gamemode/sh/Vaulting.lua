@@ -46,12 +46,6 @@ function meta:SetMantleEndPos(value)
 end
 
 local function PlayVaultAnim(ply, ang)
-	local last_weapon = ply:GetActiveWeapon()
-
-	if IsValid(last_weapon) and last_weapon:GetClass() ~= "runnerhands" then
-		ply:SetActiveWeapon(ply:GetWeapon("runnerhands"))
-	end
-
 	local activewep = ply:GetActiveWeapon()
 
 	if ply:UsingRH() and activewep:GetSequence() == 17 then
