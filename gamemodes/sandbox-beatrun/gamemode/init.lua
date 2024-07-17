@@ -15,4 +15,4 @@ for _, v in ipairs(file.Find("gamemodes/sandbox-beatrun/gamemode/sv/*.lua", "GAM
 	include("sv/" .. v)
 end
 
-print("BTR v1.0.2-kai")
+print("BTR v1.0.3-kai")
