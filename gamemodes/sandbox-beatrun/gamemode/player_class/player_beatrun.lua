@@ -125,12 +125,12 @@ function PLAYER:SetupDataTables()
 end
 
 function PLAYER:Loadout()
-  // remove all their ammo, and just give them runner hands
-  // and a knife
+	// remove all their ammo, and just give them runner hands
+	// and a knife
 	self.Player:RemoveAllAmmo()
 
 	self.Player:Give("runnerhands")                 // Running hands
-  self.Player:Give("weapon_swcs_knife_butterfly") // A knife
+	self.Player:Give("weapon_swcs_knife_butterfly") // A knife
 
 	self.Player:SelectWeapon("runnerhands")
 
