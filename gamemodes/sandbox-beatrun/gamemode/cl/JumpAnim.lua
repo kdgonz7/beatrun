@@ -1693,6 +1693,7 @@ local function JumpThink()
 			if BodyAnimString == "wallrunverticalstart" or BodyAnimString == "wallrunvertical" then
 				ang = ply.WallrunOrigAng or ang
 				BodyAnimSpeed = 1.2 * math.Clamp((LocalPlayer():GetWallrunTime() - CurTime()) / 1.2, 0.5, 1)
+
 			end
 
 			if BodyAnimString == "vaultover" or BodyAnimString == "vaultkong" or BodyAnimString == "stepuprightleg" or BodyAnimString == "vaultonto" then

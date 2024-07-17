@@ -389,7 +389,7 @@ hook.Add("SetupMove", "Wallrunning", function(ply, mv, cmd)
   if ply:GetWallrun() == nil or not ply:Alive() then ply:SetWallrun(0) end
   if ply:GetWallrun() == 0 and mv:GetVelocity().z > -450 and not ply:OnGround() and mv:KeyDown(IN_FORWARD) and not ply:Crouching() and not mv:KeyDown(IN_DUCK) and ply:GetMoveType() ~= MOVETYPE_NOCLIP and ply:WaterLevel() < 1 then WallrunningCheck(ply, mv, cmd) end
   if ply:GetWallrun() ~= 0 then
-    if IsValid(ply:GetActiveWeapon()) and ply:GetActiveWeapon():GetClass() ~= "runnerhands" then 
+    if IsValid(ply:GetActiveWeapon()) and ply:GetActiveWeapon():GetClass() ~= "runnerhands" then
       ply:SetActiveWeapon(ply:GetWeapon("runnerhands"))
     end
     WallrunningThink(ply, mv, cmd)
