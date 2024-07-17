@@ -20,6 +20,7 @@ This version of beatrun, albeit much smaller, also yields better FPS in certain 
 * The checkpoint system was also removed
 * The disarm system is removed, which maintains certain compatibility with [BSMod](https://steamcommunity.com/sharedfiles/filedetails/?id=2106330193)
 * The focus on trying to mimic Mirror's Edge, and a realigned vision to be a realism/gameplay enhancing addon.
+* Any Beatrun fonts that are created, utilizing the default GMod fonts can yield for a more lightweight experience.
 
 ## What is CHANGED?
 
