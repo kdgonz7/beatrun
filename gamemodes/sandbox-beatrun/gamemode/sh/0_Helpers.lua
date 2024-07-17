@@ -84,7 +84,7 @@ function playermeta:UsingRH(wep)
 	end
 end
 
-function playermeta:notUsingRH(wep)
+function playermeta:notUsingHands(wep)
 	local activewep = wep or self:GetActiveWeapon()
 
 	if IsValid(activewep) and activewep:GetClass() ~= "runnerhands" then

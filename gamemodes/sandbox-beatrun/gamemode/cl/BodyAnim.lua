@@ -46,6 +46,7 @@ local savedeyeangb = Angle(0, 0, 0)
 // local bodyanimdone = false
 // local holstertime = 0
 local animmodelstring = ""
+
 local showweapon = false
 local showvm = false
 local usefullbody = false
@@ -127,7 +128,7 @@ function RemoveBodyAnim(noang)
   if (not IsValid(currentwep)
   or  not currentwep:IsScripted()) then return end
 
-  if ply:notUsingRH() then
+  if ply:notUsingHands() then
     if currentwep.PlayViewModelAnimation then
       currentwep:PlayViewModelAnimation("Draw")
     else
@@ -204,7 +205,7 @@ function CacheBodyAnim()
 
   BodyAnim:SetupBones()
   matrixfrompos:Set(LocalPlayer():GetPos())
-  
+
   for i = 0, BodyAnim:GetBoneCount() - 1 do
     local m = BodyAnim:GetBoneMatrix(i)
     m:SetTranslation(m:GetTranslation() - pos)

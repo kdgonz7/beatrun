@@ -48,3 +48,7 @@ The addons which are resolved in conflicts TOTALLY are as follows:
 The addons which are resolved (with limitations) are as follows:
 
 * BSMod Punch SWEP
+
+## Rewrite
+
+This is the NEW BR Branch which is a rewrite of the existing movement code.
