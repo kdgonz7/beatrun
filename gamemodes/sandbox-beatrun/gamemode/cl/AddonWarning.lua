@@ -35,23 +35,27 @@ local incompatible = {
 	["2230307188"] = true, // EFT Walk Sounds (Footsteps)
 	["2137973704"] = true, // [PF] Modern Warfare 2
 	["577145478"] = true, // ViewMod
-	["1632091428"] = true, // Fine Speed
 	["1622199072"] = true, // SaVav Parkour Mod
 	["2840019616"] = true, // cBobbing (Reupped & Fixed)
 	["583517911"] = true, // Eye View Attachment
-	// ["2106330193"] = true, // BSMod Punch SWEP + Kick & KillMoves (i can remove this because i dont use the original functionality)
 	["2593047682"] = true, // Viewpunch Viewbob
-	["142911907"] = true, // Advanced Combat Rolls
 	["2316713217"] = true, // Player Speeds Changer 2.0 [REUPLOAD]
 	["2635378860"] = true, // MW/WZ Skydive/Parachute + Infil
 	["2919957168"] = true, // Modern Warfare II - Takedowns & Revive System
 	["2600234804"] = true, // ASTW2 - Base Weapons
-	["2824714462"] = true, // [TFA] Screen Shake
 	["3037375111"] = true, // Quick Slide With Legs
 	["748422181"] = true, // FOV Changer
-	["2930331275"] = true, // Realistic Fragmentation System
 	["112806637"] = true, // Gmod Legs 3
-	["678037029"] = true // Enhanced Camera
+	["678037029"] = true, // Enhanced Camera
+	["142911907"] = true, // Advanced Combat Rolls
+	["2824714462"] = true, // [TFA] Screen Shake
+	["1632091428"] = true, // Fine Speed
+
+
+	// Solved Conflicts
+	// ["2930331275"] = true, // Realistic Fragmentation System
+	// ["2106330193"] = true, // BSMod Punch SWEP + Kick & KillMoves
+
 }
 
 local warnpanel = {
