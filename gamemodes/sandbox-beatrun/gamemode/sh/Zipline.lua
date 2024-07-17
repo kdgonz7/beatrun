@@ -191,9 +191,9 @@ local function ZiplineThink(ply, mv, cmd, zipline)
 			ply:StopSound("ZiplineLoop")
 
 			if game.SinglePlayer() then
-				ply:SendLua("viewtiltlerp.z = BodyAnimEyeAng.z")
+				ply:SendLua("viewtiltlerp.z = 0")
 			else
-				viewtiltlerp.z = BodyAnimEyeAng.z
+				viewtiltlerp.z = 0
 			end
 		end
 
